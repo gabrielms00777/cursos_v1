@@ -1,0 +1,44 @@
+problemas para resolver nesse sistema
+
+gerais:
+    ok - mudar a rota get course.store para evita problemas
+    arrumar os slugs para nao precisar colocar o id, tambem vale para aulas
+    configurar o titluo das paginas
+    mudar a forma de cadastrar o link, para apenas clicar em compartilhar e copiar
+
+welcome:
+    colocar alguma logo na welcome
+    ok - colocar algum link para a home
+    ok - colocar um template base para parte do user
+    ok - colocar link nos cards para ir ao curso
+
+course:
+    ok - arrumar o header
+    ok(quase) - arrumar o a imagem do curso
+    ok - assim como o conteudo e colocar paginacao nas aulas
+    ok - arrumar as funcionalidades do botao de se inscrever
+
+meus-cursos:
+    ok - arrumar o header
+    ok - fazer a foto aparecer
+    colocar algo para sinalizar se foi concluido ou barra de progresso
+
+course.show:
+    ok - arrumar o header
+    ok - arrumar a disposicao dos cards na tela, deixando mais para a aula
+    colocar um botao na para midzer se foi conscluda ou nao
+    avisar quanto falta para concluir
+    botao para marcar que finalizou o curso
+
+admin home :
+    analise - colocar mais alguma informacao relevante no dashboad
+
+admin meus cursos:
+    ok - colocar a quantidade de aluno nos cursos
+
+admin editar curso:
+    colocar para aparecer a foto do curso
+    mudar a foto quando carregar uma nova
+    ok - arrumar u bug quando cadastra sem foto
+    colocar um botao de editar a aula
+    ok - (ver se fica melhor colocando em uma tabela as aulas)
