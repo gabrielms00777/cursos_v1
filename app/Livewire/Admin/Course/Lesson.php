@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Course;
 
 use App\Models\Course;
+use App\Rules\LinkRule;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
 use WireUi\Traits\Actions;
@@ -21,7 +22,7 @@ class Lesson extends Component
     #[Rule('required|string|max:255')]
     public string $content = '';
 
-    #[Rule(['required','string','max:255'])]
+    #[Rule('required|string|max:255')]
     public string $link = '';
 
     // #[Rule('nullable|numeric|max:255')]
@@ -31,7 +32,10 @@ class Lesson extends Component
     {
         $this->validate();
 
-        $this->link = explode();
+        if(str_starts_with($this->link, 'https://youtu.be/')){
+            $this->link = explode('https://youtu.be/', $this->link)[1];
+        }
+        // dd($this->all());
 
         $this->course->lessons()->create($this->all());
 
@@ -47,7 +51,6 @@ class Lesson extends Component
 
     public function render()
     {
-
         return view('livewire.admin.course.lesson');
     }
 }

@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// auth()->loginUsingId(2);
+// auth()->loginUsingId(1);
 // auth()->logout();
 // php artisan view:clear
 // php artisan cache:clear
@@ -28,17 +28,15 @@ Route::get('/', Home\Index::class)->name('index');
 
 Route::get('/curso/{course}', Home\Show::class)->name('course');
 
-Route::prefix('/meus-cursos')->middleware('studant')->group(function(){
+Route::prefix('/meus-cursos')->middleware('studant')->group(function () {
 
     Route::get('/', Studant\Index::class)->name('studant.index');
 
-    // Route::get('/{course}/{lesson}', [StudantController::class, 'show'])->name('course.show');
     Route::get('/{course}/{lesson}', Studant\Show::class)->name('course.show');
 });
 
 
-
-Route::prefix('/dashboard')->middleware('admin')->group(function(){
+Route::prefix('/dashboard')->middleware('admin')->group(function () {
 
     Route::get('/', Admin\Index::class)->name('dashboard');
 
@@ -55,4 +53,4 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

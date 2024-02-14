@@ -3,8 +3,13 @@
         <!-- Detalhes do Curso -->
         <div>
             <h2 class="mb-4 text-3xl font-bold">{{ $course->title }}</h2>
-            <img src="{{ asset('storage/' . $course->image) }}" alt="{{ $course->title }}"
-                class="object-cover w-full h-64 mb-4 mr-6 rounded-lg">
+            @if ($course->image)
+                <img src="{{ asset('storage/' . $course->image) }}" alt="{{ $course->title }}"
+                    class="object-cover w-full h-32 mb-4 rounded">
+            @else
+                <img src="{{ asset('image.jpg') }}" alt="{{ $course->title }}"
+                    class="object-cover w-full h-32 mb-4 rounded">
+            @endif
             <p class="mb-4 text-gray-700">{{ $course->description }}</p>
             {{-- <p class="mb-4 text-gray-700">Duração: 8 semanas</p> --}}
             {{-- <p class="mb-4 text-gray-700">Nível: Iniciante a Intermediário</p> --}}
